@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="material_text_high_emphasis">#DE000000</color>
+    <color name="material_text_medium_emphasis">#99000000</color>
+    <color name="material_text_disabled">#61000000</color>
+
+    <color name="material_text_high_emphasis_on_dark">#DEFFFFFF</color>
+    <color name="material_text_medium_emphasis_on_dark">#99FFFFFF</color>
+    <color name="material_text_disabled_on_dark">#61FFFFFF</color>
+</resources>

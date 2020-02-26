@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="EasyRecyclerView">
+        <attr name="dividerStyle" format="enum">
+            <enum name="basic" value="0" />
+            <enum name="none" value="1" />
+        </attr>
+        <attr name="dividerLeftInset" format="dimension" />
+        <attr name="dividerRightInset" format="dimension" />
+        <attr name="aggressiveRecycling" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="EasyGridRecyclerView">
+        <attr name="numberOfColumns" format="integer" />
+        <attr name="interItemSpacing" format="dimension" />
+    </declare-styleable>
+
+</resources>
