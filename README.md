@@ -3,14 +3,19 @@
 ## Features
 
 * Single source of truth. There is no Adapter to put data into, EasyRecyclerView asks for only the data it needs to display a row, when it needs it.
-* Built in support for Material Design list style using `MaterialRowViewHolder`
+* Built in support for [Material Design List](https://material.io/components/lists) style using `MaterialRowViewHolder`
+  * One, two or 3 lines of text
+  * Optional leading image, square or round, large or small
+  * Optional accessory text
+  * Automatic row height and margins according to Material spec
+  * Custom rows also possible
 * Support for sections
   * `IndexPath`
   * `numberOfSections`, `numberOfRowsInSection`
-  * Default material design style sections (`titleForHeaderInSection`)
-  * Customizable (`sectionView`)
+  * Default material design style sections (`titleForHeaderInSection`), or custom section view
 * Handle selection (`onRowSelected`)
 * Row dividers (`app:dividerStyle=none|basic`, `app:dividerLeftInset`, `app:dividerRightInset`)
+* Automatic inflation of item views
 
 ```xml
 <com.github.emielbon.easyrecyclerview.EasyRecyclerView
