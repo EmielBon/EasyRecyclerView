@@ -24,24 +24,26 @@
 
 package com.github.emielbon.easyrecyclerview.example
 
+import android.app.Activity
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.github.emielbon.easyrecyclerview.EasyRecyclerView
 import com.github.emielbon.easyrecyclerview.IndexPath
 import com.github.emielbon.easyrecyclerview.MaterialRowViewHolder
 import com.github.emielbon.easyrecyclerview.MaterialRowViewHolder.ImageStyle.SQUARE_SMALL
 import com.github.emielbon.easyrecyclerview.MaterialRowViewHolder.MaterialStyle.TWO_LINES
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), EasyRecyclerView.DataSource, EasyRecyclerView.Delegate {
+class MainActivity : AppCompatActivity(R.layout.activity_main), EasyRecyclerView.DataSource, EasyRecyclerView.Delegate {
 
     private val items = (0..100).map { index ->
-        Item(title = "Title $index", subtitle = "Subtitle $index")
+        Item(title = "Item $index", subtitle = "Extra info about item $index")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         easyRecyclerView.dataSource = this
         easyRecyclerView.delegate = this
@@ -63,8 +65,16 @@ class MainActivity : AppCompatActivity(), EasyRecyclerView.DataSource, EasyRecyc
         }
     }
 
+    override fun onRowSelected(recyclerView: EasyRecyclerView, viewHolder: EasyRecyclerView.ViewHolder, indexPath: IndexPath) {
+        val item = items[indexPath.row]
+        Snackbar.make(contentView, "${item.title} clicked", Snackbar.LENGTH_SHORT).show()
+    }
+
     data class Item(
         val title: String,
         val subtitle: String
     )
 }
+
+val Activity.contentView: ViewGroup
+    get() = findViewById(android.R.id.content)
