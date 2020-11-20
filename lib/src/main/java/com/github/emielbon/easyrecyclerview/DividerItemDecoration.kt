@@ -109,7 +109,7 @@ class DividerItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
                 top = rowContentRect.bottom,
                 bottom = rowContentRect.bottom + dividerHeight,
                 left = rowContentRect.left + dividerLeftInset,
-                right = rowContentRect.right + dividerRightInset
+                right = rowContentRect.right - dividerRightInset
             )
 
             divider.bounds = bottomDividerRect
