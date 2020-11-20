@@ -97,8 +97,6 @@ class MainActivity : AppCompatActivity(), EasyRecyclerView.DataSource, EasyRecyc
 }
 ```
 
-
-
 ## EasyGridRecyclerView
 
 To display grids of items, use `EasyGridRecyclerView`.
